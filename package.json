@@ -1,0 +1,26 @@
+{
+	"private": true,
+	"name": "reminder",
+	"repository": "https://github.com/govau/reminder",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 0"
+	},
+	"author": {
+		"name": "Commonwealth of Australia, DTA",
+		"email": "guides@digital.gov.au",
+		"url": "https://www.dta.gov.au/"
+	},
+	"contributors": [
+		{
+			"name": "Dominik Wilkowski",
+			"email": "hi@dominik-wilkowski.com",
+			"url": "https://dominik-wilkowski.com/"
+		}
+	],
+	"dependencies": {},
+	"devDependencies": {},
+	"engines": {
+		"node": "7.10.0"
+	},
+	"license": "MIT"
+}
