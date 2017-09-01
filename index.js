@@ -1,6 +1,7 @@
 // dependencies
 const IncomingWebhook = require('@slack/client').IncomingWebhook;
 const YAML = require('yamljs');
+const Path = require('path');
 const Fs = require('fs');
 
 
@@ -10,7 +11,7 @@ const Webhook = new IncomingWebhook( URL );
 
 
 // culture messages
-let culture = Fs.readFileSync( 'messages.yml', 'utf8' );
+let culture = Fs.readFileSync( Path.normalize(`${ __dirname }/messages.yml`), 'utf8' );
 culture = YAML.parse( culture );
 
 culture.today ++;
