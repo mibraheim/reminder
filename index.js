@@ -23,7 +23,7 @@ const message = culture.messages[ culture.today ];
 
 
 // post webhook
-Webhook.send( `Todays culture value message:\n\n*${ message }*`, ( error, header, statusCode, body ) => {
+Webhook.send( `Today's culture value message:\n\n*${ message }*`, ( error, header, statusCode, body ) => {
 	if( error ) {
 		console.error( `error: `, err );
 	}
