@@ -8,10 +8,11 @@ const Fs = require('fs');
 // slack
 const URL = process.env.SLACK_WEBHOOK_URL || '';
 const Webhook = new IncomingWebhook( URL );
+const messagesPath = Path.normalize(`${ __dirname }/messages.yml`);
 
 
 // culture messages
-let culture = Fs.readFileSync( Path.normalize(`${ __dirname }/messages.yml`), 'utf8' );
+let culture = Fs.readFileSync( messagesPath, 'utf8' );
 culture = YAML.parse( culture );
 
 culture.today ++;
@@ -33,6 +34,6 @@ Webhook.send( `Today's culture value message:\n\n*${ message }*`, ( error, heade
 		console.log(`index: ${ culture.today }`);
 
 		// increment message index
-		Fs.writeFileSync( 'messages.yml', YAML.stringify( culture, 2, 2 ), 'utf8');
+		Fs.writeFileSync( messagesPath, YAML.stringify( culture, 2, 2 ), 'utf8');
 	}
 });
